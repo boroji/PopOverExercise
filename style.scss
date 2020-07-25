@@ -42,3 +42,24 @@ $thin: 300;
 *:before, *:after {
     box-sizing: border-box;
 }
+
+// (6) - Pop Over Wrapper
+.pop-over {
+    max-width: 1300px;
+    display: grid;
+    grid: repeat(3, auto) / repeat(12, 90px);
+    gap: 20px;
+}
+
+header {
+    text-align: center;
+    grid-area: 1 / 4 / span 1 / span 5;
+}
+
+main {
+    grid-area: 2 / 5 / span 1 / span 3;
+}
+
+footer {
+    grid-area: 3 / 4 / span 1 / span 5;
+}

@@ -21,4 +21,37 @@ Table of Content
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+.pop-over {
+  max-width: 1300px;
+  display: -ms-grid;
+  display: grid;
+  grid: repeat(3, auto)/repeat(12, 90px);
+  gap: 20px;
+}
+
+header {
+  text-align: center;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 5;
+  grid-area: 1 / 4 / span 1 / span 5;
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
+  grid-area: 2 / 5 / span 1 / span 3;
+}
+
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 5;
+  grid-area: 3 / 4 / span 1 / span 5;
+}
 /*# sourceMappingURL=style.css.map */
