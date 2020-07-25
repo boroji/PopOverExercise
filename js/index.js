@@ -34,3 +34,13 @@ btn.addEventListener('click', () => {
 })
 
 //  () - Simple Parallex
+const shavingCream = document.querySelector('.shaving-cream');
+const knife = document.querySelector('.knife');
+
+window.addEventListener('scroll', () => {
+    const scrollBar = window.scrollY;
+    const up = scrollBar * -0.5 + 'px';
+    const down = scrollBar * 0.5 + 'px';
+    knife.style.transform = `translateY(${up})`;
+    shavingCream.style.transform = `translateY(${down})`;
+})
