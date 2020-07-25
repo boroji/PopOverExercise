@@ -17,9 +17,12 @@ checked.addEventListener('click', () => {
 //  () - Pop Over 3 seconds
 const popOver = document.querySelector('.pop-over');
 const wrapper = document.querySelector('.wrapper');
+const overlay = document.querySelector('.overlay');
+
 
 setTimeout(() => {
     popOver.classList.add('visible');
+    overlay.classList.add('visible');
 }, 3000);
 
 //  () - Close button trigger
@@ -27,9 +30,11 @@ const btn = document.querySelector('.close-button')
 
 btn.addEventListener('click', () => {
     popOver.classList.add('close')
+    overlay.classList.add('close')
     setTimeout(() => {
         // Take the wrapper out of document flow after 1.2s delay
         wrapper.style.display = 'none';
+        overlay.style.display = 'none';
     }, 1200);
 })
 
