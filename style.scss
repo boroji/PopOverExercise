@@ -8,8 +8,42 @@ Table of Content
 (5) - Typography Declaration
 (6) - Border-box and Reset
 (7) - Flex Column
-(8) - Pop Over Wrapper
-
+(8) - Overlay
+(9) - Wrapper
+(10) - Pop Over Modal
+(11) - Header
+(12) - Main
+(13) - Footer
+(14) - Animation
+(15) - Reponsive Breakpoint 1350px
+    (15.1) - Wrapper
+    (15.2) - Pop Over
+    (15.3) - Header
+    (15.4) - Main
+    (15.5) - Footer
+(16) - Reponsive Breakpoint 1150px
+    (16.1) - Wrapper
+    (16.2) - Pop Over
+    (16.3) - Header
+    (16.4) - Main
+    (16.5) - Footer
+(17) - Reponsive Breakpoint 910px
+    (17.1) - Wrapper
+    (17.2) - Pop Over
+    (17.3) - Header
+    (17.4) - Main
+    (17.5) - Footer
+(18) - Reponsive Breakpoint 680px
+    (18.1) - Wrapper
+    (18.2) - Pop Over
+    (18.3) - Header
+    (18.4) - Main
+    (18.5) - Footer
+(19) - Reponsive Breakpoint 470px
+    (19.1) - Pop Over
+    (19.2) - Header
+    (19.3) - Main
+    (19.4) - Footer
 ************************************
 */
 
@@ -90,7 +124,7 @@ $thin: 300;
     opacity: 0;
 }
 
-// () - Overlay
+// (8) - Overlay
 
 .overlay {
     width: 100%;
@@ -103,7 +137,7 @@ $thin: 300;
     opacity: 0;
 }
 
-// () - Wrapper
+// (9) - Wrapper
 .wrapper {
     max-width: 1300px;
     display: flex;
@@ -112,7 +146,7 @@ $thin: 300;
     margin: 0 auto;
 }
 
-// () - Pop Over
+// (10) - Pop Over Modal
 .pop-over {
     display: grid;
     grid: repeat(3, auto) / repeat(12, 90px);
@@ -123,6 +157,19 @@ $thin: 300;
     position: relative;
     visibility: hidden;
     opacity: 0;
+
+    &::after {
+        content: ' ';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid $negative;
+        transform: scale(1.02);
+        transform-origin: center center;
+        pointer-events: none;
+    }
 
     // Shaving Cream image
     .shaving-cream {
@@ -180,7 +227,7 @@ $thin: 300;
     }
 }
 
-// () - Header
+// (11) - Header
 header {
     text-align: center;
     grid-area: 1 / 4 / span 1 / span 6;
@@ -239,7 +286,7 @@ header {
     }
 }
 
-// () - Main
+// (12) - Main
 main {
     grid-area: 2 / 4 / span 1 / span 6;
 
@@ -279,7 +326,7 @@ main {
     }
 }
 
-// () - Footer
+// (13) - Footer
 footer {
     grid-area: 3 / 1 / span 1 / span 12;
     background-color: $primary;
@@ -334,6 +381,7 @@ footer {
             color: $negative;
             text-transform: uppercase;
             @include fadeIn(4s);
+            cursor: pointer;
         }
     }
     
@@ -366,7 +414,7 @@ footer {
     }
 }
 
-// () - Animation
+// (14) - Animation
 
 @keyframes visible {
     from {
@@ -398,15 +446,15 @@ footer {
     animation: hidden 1s ease-out forwards;
 }
 
-// () - Responsive
+// (15) - Reponsive Breakpoint 1350px
 
 @media (max-width: 1350px) {
-    // () - Wrapper
+    // (15.1) - Wrapper
     .wrapper {
         max-width: 900px;
     }
 
-    // () - Pop Over
+    // (15.2) - Pop Over
     .pop-over {
         grid: repeat(3, auto) / repeat(10, 90px);
         // Shaving Cream image
@@ -427,12 +475,12 @@ footer {
         }
     }
 
-    // () - Header
+    // (15.3) - Header
     header {
         grid-area: 1 / 3 / span 1 / span 6;
     }
 
-    // () - Main
+    // (15.4) - Main
     main {
         grid-area: 2 / 3 / span 1 / span 6;
 
@@ -446,20 +494,21 @@ footer {
         }
     }
 
-    // () - Footer
+    // (15.5) - Footer
     footer {
         grid-area: 3 / 1 / span 1 / span 10;
     }
 }
 
+// (16) - Reponsive Breakpoint 1150px
 @media (max-width: 1150px) {
 
-    // () - Wrapper
+    // (16.1) - Wrapper
     .wrapper {
         max-width: 720px;
     }
 
-    // () - Pop Over
+    // (16.2) - Pop Over
     .pop-over {
         grid: repeat(3, auto) / repeat(8, 90px);
 
@@ -467,32 +516,37 @@ footer {
         .close-button {
             grid-column: 8 / span 1;
         }
+
+        &::after {
+            transform: scale(1.02, 1.01);
+        }
     }
 
-    // () - Header
+    // (16.3) - Header
     header {
         grid-area: 1 / 3 / span 1 / span 4;
     }
 
-    // () - Main
+    // (16.4) - Main
     main {
         grid-area: 2 / 3 / span 1 / span 4;
     }
 
-    // () - Footer
+    // (16.5) - Footer
     footer {
         grid-area: 3 / 1 / span 1 / span 8;
     }
 }
 
+// (17) - Reponsive Breakpoint 910px
 @media (max-width: 910px) {
 
-    // () - Wrapper
+    // (17.1) - Wrapper
     .wrapper {
         max-width: 540px;
     }
 
-    // () - Pop Over
+    // (17.2) - Pop Over
     .pop-over {
         grid: repeat(3, auto) / repeat(6, 90px);
 
@@ -502,17 +556,17 @@ footer {
         }
     }
 
-    // () - Header
+    // (17.3) - Header
     header {
         grid-area: 1 / 2 / span 1 / span 4;
     }
 
-    // () - Main
+    // (17.4) - Main
     main {
         grid-area: 2 / 2 / span 1 / span 4;
     }
 
-    // () - Footer
+    // (17.5) - Footer
     footer {
         grid-area: 3 / 1 / span 1 / span 6;
 
@@ -527,14 +581,15 @@ footer {
     }
 }
 
+// (18) - Reponsive Breakpoint 680px
 @media (max-width: 680px) {
 
-    // () - Wrapper
+    // (18.1) - Wrapper
     .wrapper {
         max-width: 360px;
     }
 
-    // () - Pop Over
+    // (18.2) - Pop Over
     .pop-over {
         grid: repeat(3, auto) / repeat(4, 90px);
 
@@ -564,12 +619,12 @@ footer {
         }
     }
 
-    // () - Header
+    // (18.3) - Header
     header {
         grid-area: 1 / 2 / span 1 / span 2;
     }
 
-    // () - Main
+    // (18.4) - Main
     main {
         grid-area: 2 / 2 / span 1 / span 2;
 
@@ -581,7 +636,7 @@ footer {
         }
     }
 
-    // () - Footer
+    // (18.5) - Footer
     footer {
         grid-area: 3 / 1 / span 1 / span 4;
 
@@ -591,9 +646,10 @@ footer {
     }
 }
 
+// (19) - Reponsive Breakpoint 470px
 @media (max-width: 470px) {
 
-    // () - Pop Over
+    // (19.1) - Pop Over
     .pop-over {
         grid: repeat(3, auto) / repeat(2, 1fr);
 
@@ -622,6 +678,10 @@ footer {
             top: 0;
             right: 55px;
         }
+
+        &::after {
+            transform: scale(0);
+        }
     }
 
     main, footer {
@@ -629,7 +689,7 @@ footer {
         padding-left: 45px;
     }
 
-    // () - Header
+    // (19.2) - Header
     header {
         grid-area: 1 / 1 / span 1 / span 2;
         padding: 45px;
@@ -640,7 +700,7 @@ footer {
         }
     }
 
-    // () - Main
+    // (19.3) - Main
     main {
         grid-area: 2 / 1 / span 1 / span 2;
 
@@ -653,7 +713,7 @@ footer {
         }
     }
 
-    // () - Footer
+    // (19.4) - Footer
     footer {
         grid-area: 3 / 1 / span 1 / span 2;
 

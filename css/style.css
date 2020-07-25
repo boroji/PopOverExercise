@@ -8,8 +8,42 @@ Table of Content
 (5) - Typography Declaration
 (6) - Border-box and Reset
 (7) - Flex Column
-(8) - Pop Over Wrapper
-
+(8) - Overlay
+(9) - Wrapper
+(10) - Pop Over Modal
+(11) - Header
+(12) - Main
+(13) - Footer
+(14) - Animation
+(15) - Reponsive Breakpoint 1350px
+    (15.1) - Wrapper
+    (15.2) - Pop Over
+    (15.3) - Header
+    (15.4) - Main
+    (15.5) - Footer
+(16) - Reponsive Breakpoint 1150px
+    (16.1) - Wrapper
+    (16.2) - Pop Over
+    (16.3) - Header
+    (16.4) - Main
+    (16.5) - Footer
+(17) - Reponsive Breakpoint 910px
+    (17.1) - Wrapper
+    (17.2) - Pop Over
+    (17.3) - Header
+    (17.4) - Main
+    (17.5) - Footer
+(18) - Reponsive Breakpoint 680px
+    (18.1) - Wrapper
+    (18.2) - Pop Over
+    (18.3) - Header
+    (18.4) - Main
+    (18.5) - Footer
+(19) - Reponsive Breakpoint 470px
+    (19.1) - Pop Over
+    (19.2) - Header
+    (19.3) - Main
+    (19.4) - Footer
 ************************************
 */
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap");
@@ -62,6 +96,21 @@ Table of Content
   position: relative;
   visibility: hidden;
   opacity: 0;
+}
+
+.pop-over::after {
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #fff;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  pointer-events: none;
 }
 
 .pop-over .shaving-cream {
@@ -453,6 +502,7 @@ footer .form button {
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
   opacity: 0;
+  cursor: pointer;
 }
 
 footer .terms {
@@ -602,6 +652,10 @@ footer .terms p {
     -ms-grid-column: 8;
     -ms-grid-column-span: 1;
     grid-column: 8 / span 1;
+  }
+  .pop-over::after {
+    -webkit-transform: scale(1.02, 1.01);
+            transform: scale(1.02, 1.01);
   }
   header {
     -ms-grid-row: 1;
@@ -762,6 +816,10 @@ footer .terms p {
     position: absolute;
     top: 0;
     right: 55px;
+  }
+  .pop-over::after {
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   main, footer {
     padding-right: 45px;
