@@ -81,6 +81,15 @@ $thin: 300;
     right: 50%;
 }
 
+@mixin fadeIn($time) {
+    animation-name: visible;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: $time;
+    opacity: 0;
+}
+
 // () - Wrapper
 
 .wrapper {
@@ -100,6 +109,8 @@ $thin: 300;
     background-color: $negative;
     box-shadow: 0 0 30px 10px transparentize($dark, 0.95);
     position: relative;
+    visibility: hidden;
+    opacity: 0;
 
     // Shaving Cream image
     .shaving-cream {
@@ -112,7 +123,7 @@ $thin: 300;
     .knife {
         position: absolute;
         top: 50%;
-        left: -350px;
+        left: -390px;
     }
 
     // Close button " X "
@@ -121,6 +132,9 @@ $thin: 300;
         fill-rule: nonzero;
         transform: translate(45px, 25px);
         grid-column: 12 / span 1;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
 
         path {
             fill: $primary;
@@ -166,6 +180,7 @@ header {
         @include flexColumn();
         letter-spacing: 2px;
         text-transform: uppercase;
+        @include fadeIn(3.1s);
     }
 
 
@@ -174,6 +189,7 @@ header {
         @include typography($serif, $md, $regular);
         font-style: italic;
         margin-top: 35px;
+        @include fadeIn(3.2s);
     }
 
     // "New Company Website" heading
@@ -183,6 +199,7 @@ header {
         text-transform: uppercase;
         line-height: 60px;
         margin-top: 35px;
+        @include fadeIn(3.3s);
 
         span:nth-child(2) {
             color: $primary;
@@ -194,6 +211,7 @@ header {
         @include typography($sans-serif, $xs, $regular);
         line-height: 30px;
         margin-top: 65px;
+        @include fadeIn(3.4s);
     }
 
     // SVG underline
@@ -220,6 +238,7 @@ main {
         text-transform: uppercase;
         text-align: center;
         margin: 40px 0;
+        @include fadeIn(3.5s);
     }
 
     // List style
@@ -230,6 +249,7 @@ main {
         li {
             @include typography($sans-serif, $xs, $regular);
             margin-bottom: 10px;
+            @include fadeIn(3.6s);
         }
 
         // Custom diamond bullet points
@@ -262,11 +282,14 @@ footer {
     h2 {
         @include typography($serif, $lg, $bold);
         text-transform: uppercase;
+        @include fadeIn(3.7s);
+        
     }
 
     // Know the moment our new website goes live
     h3 {
         @include typography($sans-serif, $xs, $regular);
+        @include fadeIn(3.8s);
     }
 
     // Form Submission
@@ -282,6 +305,7 @@ footer {
             padding: 15px;
             @include typography($sans-serif, $xs, $regular);
             margin-right: 5px;
+            @include fadeIn(3.9s);
 
             // input placeholder
             &::placeholder {
@@ -296,6 +320,7 @@ footer {
             background-color: $dark;
             color: $negative;
             text-transform: uppercase;
+            @include fadeIn(4s);
         }
     }
     
@@ -323,6 +348,39 @@ footer {
             @include typography($sans-serif, $xs, $thin);
             color: $negative;
             transform: translateY(-2px);
+            @include fadeIn(4.1s);
         }
     }
+}
+
+// () - Animation
+
+@keyframes visible {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    animation: visible 0.5s ease-out forwards;
+}
+
+@keyframes hidden {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.close {
+    opacity: 0;
+    animation: hidden 1s ease-out forwards;
 }

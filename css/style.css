@@ -49,6 +49,8 @@ Table of Content
   -webkit-box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.05);
   position: relative;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .pop-over .shaving-cream {
@@ -60,7 +62,7 @@ Table of Content
 .pop-over .knife {
   position: absolute;
   top: 50%;
-  left: -350px;
+  left: -390px;
 }
 
 .pop-over .close-button {
@@ -74,6 +76,9 @@ Table of Content
   -ms-grid-column: 12;
   -ms-grid-column-span: 1;
   grid-column: 12 / span 1;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
 }
 
 .pop-over .close-button path {
@@ -139,6 +144,17 @@ header p:first-child {
           align-items: center;
   letter-spacing: 2px;
   text-transform: uppercase;
+  -webkit-animation-name: visible;
+          animation-name: visible;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3.1s;
+          animation-delay: 3.1s;
+  opacity: 0;
 }
 
 header p:nth-child(2) {
@@ -147,6 +163,17 @@ header p:nth-child(2) {
   font-weight: 400;
   font-style: italic;
   margin-top: 35px;
+  -webkit-animation-name: visible;
+          animation-name: visible;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3.2s;
+          animation-delay: 3.2s;
+  opacity: 0;
 }
 
 header h1 {
@@ -169,6 +196,17 @@ header h1 {
   text-transform: uppercase;
   line-height: 60px;
   margin-top: 35px;
+  -webkit-animation-name: visible;
+          animation-name: visible;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3.3s;
+          animation-delay: 3.3s;
+  opacity: 0;
 }
 
 header h1 span:nth-child(2) {
@@ -181,6 +219,17 @@ header p:nth-child(4) {
   font-weight: 400;
   line-height: 30px;
   margin-top: 65px;
+  -webkit-animation-name: visible;
+          animation-name: visible;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3.4s;
+          animation-delay: 3.4s;
+  opacity: 0;
 }
 
 header svg {
@@ -213,6 +262,17 @@ main h2 {
   text-transform: uppercase;
   text-align: center;
   margin: 40px 0;
+  -webkit-animation-name: visible;
+          animation-name: visible;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  opacity: 0;
 }
 
 main ul {
@@ -227,6 +287,17 @@ main ul li {
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 10px;
+  -webkit-animation-name: visible;
+          animation-name: visible;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3.6s;
+          animation-delay: 3.6s;
+  opacity: 0;
 }
 
 main ul li::before {
@@ -274,12 +345,34 @@ footer h2 {
   font-size: 32px;
   font-weight: 600;
   text-transform: uppercase;
+  -webkit-animation-name: visible;
+          animation-name: visible;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3.7s;
+          animation-delay: 3.7s;
+  opacity: 0;
 }
 
 footer h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  -webkit-animation-name: visible;
+          animation-name: visible;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3.8s;
+          animation-delay: 3.8s;
+  opacity: 0;
 }
 
 footer .form {
@@ -297,6 +390,17 @@ footer .form input {
   font-size: 16px;
   font-weight: 400;
   margin-right: 5px;
+  -webkit-animation-name: visible;
+          animation-name: visible;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3.9s;
+          animation-delay: 3.9s;
+  opacity: 0;
 }
 
 footer .form input::-webkit-input-placeholder {
@@ -327,6 +431,17 @@ footer .form button {
   background-color: #000;
   color: #fff;
   text-transform: uppercase;
+  -webkit-animation-name: visible;
+          animation-name: visible;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  opacity: 0;
 }
 
 footer .terms {
@@ -355,5 +470,65 @@ footer .terms p {
   color: #fff;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
+  -webkit-animation-name: visible;
+          animation-name: visible;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 4.1s;
+          animation-delay: 4.1s;
+  opacity: 0;
+}
+
+@-webkit-keyframes visible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  -webkit-animation: visible 0.5s ease-out forwards;
+          animation: visible 0.5s ease-out forwards;
+}
+
+@-webkit-keyframes hidden {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes hidden {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.close {
+  opacity: 0;
+  -webkit-animation: hidden 1s ease-out forwards;
+          animation: hidden 1s ease-out forwards;
 }
 /*# sourceMappingURL=style.css.map */
