@@ -44,6 +44,70 @@ Table of Content
   display: grid;
   grid: repeat(3, auto)/repeat(12, 90px);
   gap: 20px;
+  margin: 80px 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.pop-over .shaving-cream {
+  position: absolute;
+  top: 140px;
+  right: -90px;
+}
+
+.pop-over .knife {
+  position: absolute;
+  top: 50%;
+  left: -350px;
+}
+
+.pop-over .close-button {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
+  fill-rule: nonzero;
+  -webkit-transform: translate(45px, 25px);
+          transform: translate(45px, 25px);
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 1;
+  grid-column: 12 / span 1;
+}
+
+.pop-over .close-button path {
+  fill: #9F173D;
+}
+
+.pop-over .top-frame, .pop-over .bottom-frame {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
+  width: 160px;
+  position: absolute;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  right: 50%;
+}
+
+.pop-over .top-frame {
+  height: 510px;
+  top: -5%;
+}
+
+.pop-over .top-frame path {
+  fill: rgba(244, 244, 244, 0.5);
+}
+
+.pop-over .bottom-frame {
+  height: 110px;
+  bottom: -5%;
+}
+
+.pop-over .bottom-frame path {
+  fill: #f4f4f4;
 }
 
 header {
@@ -53,6 +117,7 @@ header {
   -ms-grid-column: 4;
   -ms-grid-column-span: 6;
   grid-area: 1 / 4 / span 1 / span 6;
+  padding-top: 80px;
 }
 
 header p:first-child {
@@ -74,7 +139,6 @@ header p:first-child {
           align-items: center;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding-top: 50px;
 }
 
 header p:nth-child(2) {
@@ -123,9 +187,8 @@ header svg {
   margin-top: 50px;
   fill-rule: evenodd;
   clip-rule: evenodd;
-  stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-miterlimit: 1.5;
+  stroke-miterlimit: 2;
 }
 
 header svg path {
@@ -185,7 +248,7 @@ footer {
   -ms-grid-column-span: 12;
   grid-area: 3 / 1 / span 1 / span 12;
   background-color: #9F173D;
-  padding-top: 40px;
+  padding-top: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -236,6 +299,26 @@ footer .form input {
   margin-right: 5px;
 }
 
+footer .form input::-webkit-input-placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+footer .form input:-ms-input-placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+footer .form input::-ms-input-placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+footer .form input::placeholder {
+  color: #000;
+  opacity: 1;
+}
+
 footer .form button {
   font-family: "Cormorant Garamond", serif;
   font-size: 16px;
@@ -250,7 +333,7 @@ footer .terms {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 30px 0 120px 0;
+  padding: 30px 0 90px 0;
   width: 40%;
 }
 

@@ -65,7 +65,23 @@ $thin: 300;
     align-items: center;
 }
 
-// (8) - Pop Over Wrapper
+// (8) - SVG attributes
+
+@mixin svgAttributes {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    stroke-linejoin: round;
+    stroke-miterlimit: 2;
+}
+
+@mixin svgFrame {
+    width: 160px;
+    position: absolute;
+    transform: translateX(50%);
+    right: 50%;
+}
+
+// () - Wrapper
 
 .wrapper {
     max-width: 1300px;
@@ -75,35 +91,92 @@ $thin: 300;
     margin: 0 auto;
 }
 
+// () - Pop Over
 .pop-over {
     display: grid;
     grid: repeat(3, auto) / repeat(12, 90px);
     gap: 20px;
+    margin: 80px 0;
+    background-color: $negative;
+    box-shadow: 0 0 30px 10px transparentize($dark, 0.95);
+    position: relative;
+
+    // Shaving Cream image
+    .shaving-cream {
+        position: absolute;
+        top: 140px;
+        right: -90px;
+    }
+
+    // Kinfe image
+    .knife {
+        position: absolute;
+        top: 50%;
+        left: -350px;
+    }
+
+    // Close button " X "
+    .close-button {
+        @include svgAttributes();
+        fill-rule: nonzero;
+        transform: translate(45px, 25px);
+        grid-column: 12 / span 1;
+
+        path {
+            fill: $primary;
+        }
+    }
+
+    // SVG rectangle frames
+    .top-frame, .bottom-frame {
+        @include svgAttributes();
+        @include svgFrame();
+    }
+
+    // SVG top rectangle
+    .top-frame {
+        height: 510px;
+        top: -5%;
+
+        path {
+            fill:rgba(244, 244, 244, 0.5);
+        }
+    }
+
+    // SVG bottom rectangle
+    .bottom-frame {
+        height: 110px;
+        bottom: -5%;
+
+        path {
+            fill:rgb(244, 244, 244);
+        }
+    }
 }
 
 // () - Header
 header {
     text-align: center;
     grid-area: 1 / 4 / span 1 / span 6;
+    padding-top: 80px;
 
-    // You are Cortdially Invited
+    // "You are Cortdially Invited" heading
     p:first-child {
         @include typography($sans-serif, $xs, $thin);
         @include flexColumn();
         letter-spacing: 2px;
         text-transform: uppercase;
-        padding-top: 50px;
     }
 
 
-    // of the
+    // "of the" text
     p:nth-child(2) {
         @include typography($serif, $md, $regular);
         font-style: italic;
         margin-top: 35px;
     }
 
-    // New Company Website
+    // "New Company Website" heading
     h1 {
         @include typography($serif, $xl, $bold);
         @include flexColumn();
@@ -126,11 +199,7 @@ header {
     // SVG underline
     svg {
         margin-top: 50px;
-        fill-rule:evenodd;
-        clip-rule:evenodd;
-        stroke-linecap:round;
-        stroke-linejoin:round;
-        stroke-miterlimit:1.5;
+        @include svgAttributes();
 
         path {
             fill:none;
@@ -181,7 +250,7 @@ main {
 footer {
     grid-area: 3 / 1 / span 1 / span 12;
     background-color: $primary;
-    padding-top: 40px;
+    padding-top: 70px;
     @include flexColumn();
 
     h2, h3 {
@@ -213,6 +282,12 @@ footer {
             padding: 15px;
             @include typography($sans-serif, $xs, $regular);
             margin-right: 5px;
+
+            // input placeholder
+            &::placeholder {
+                color: $dark;
+                opacity: 1;
+            }
         }
 
         button {
@@ -227,9 +302,10 @@ footer {
     // Terms and Conditions
     .terms {
         display: flex;
-        padding: 30px 0 120px 0;
+        padding: 30px 0 90px 0;
         width: 40%;
 
+        // checkbox
         img {
             width: 15px;
             height: 15px;
@@ -237,10 +313,12 @@ footer {
             cursor: pointer;
         }
 
+        // javascript toggle class
         .hide {
             display: none;
         }
 
+        // terms and condition paragraph
         p {
             @include typography($sans-serif, $xs, $thin);
             color: $negative;
