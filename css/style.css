@@ -1,0 +1,24 @@
+/* 
+************************************
+Table of Content
+(1) - Google Font
+(2) - Color Palette
+(3) - Typography Size
+(4) - Typography Weight
+(5) - Border-box and Reset
+
+************************************
+*/
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=style.css.map */
