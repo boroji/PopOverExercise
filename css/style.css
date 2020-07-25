@@ -5,11 +5,14 @@ Table of Content
 (2) - Color Palette
 (3) - Typography Size
 (4) - Typography Weight
-(5) - Border-box and Reset
+(5) - Typography Declaration
+(6) - Border-box and Reset
+(7) - Flex Column
+(8) - Pop Over Wrapper
 
 ************************************
 */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -22,8 +25,21 @@ Table of Content
           box-sizing: border-box;
 }
 
-.pop-over {
+.wrapper {
   max-width: 1300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.pop-over {
   display: -ms-grid;
   display: grid;
   grid: repeat(3, auto)/repeat(12, 90px);
@@ -35,8 +51,75 @@ header {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   -ms-grid-column: 4;
-  -ms-grid-column-span: 5;
-  grid-area: 1 / 4 / span 1 / span 5;
+  -ms-grid-column-span: 6;
+  grid-area: 1 / 4 / span 1 / span 6;
+}
+
+header p:first-child {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-top: 50px;
+}
+
+header p:nth-child(2) {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 35px;
+}
+
+header h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 70px;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  line-height: 60px;
+  margin-top: 35px;
+}
+
+header h1 span:nth-child(2) {
+  color: #9F173D;
+}
+
+header p:nth-child(4) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 65px;
+}
+
+header svg {
+  margin-top: 50px;
 }
 
 main {
@@ -51,7 +134,7 @@ footer {
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   -ms-grid-column: 4;
-  -ms-grid-column-span: 5;
-  grid-area: 3 / 4 / span 1 / span 5;
+  -ms-grid-column-span: 6;
+  grid-area: 3 / 4 / span 1 / span 6;
 }
 /*# sourceMappingURL=style.css.map */

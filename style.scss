@@ -5,13 +5,19 @@ Table of Content
 (2) - Color Palette
 (3) - Typography Size
 (4) - Typography Weight
-(5) - Border-box and Reset
+(5) - Typography Declaration
+(6) - Border-box and Reset
+(7) - Flex Column
+(8) - Pop Over Wrapper
 
 ************************************
 */
 
 // (1) - Google Font
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap');
+
+$serif: 'Cormorant Garamond', serif;
+$sans-serif: 'Montserrat', sans-serif;
 
 // (2) - Color Palette
 $primary: #9F173D;
@@ -27,12 +33,19 @@ $xs: 16px;
 
 // (4) - Typography Weight
 
-$semi-bold: 600;
-$medium: 500;
+$bold: 600;
 $regular: 400;
 $thin: 300;
 
-// (5) - Border-box and Reset
+// (5) - Typography Declaration
+
+@mixin typography($family, $size, $weight) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+// (6) - Border-box and Reset
 * {
     margin: 0;
     padding: 0;
@@ -43,9 +56,26 @@ $thin: 300;
     box-sizing: border-box;
 }
 
-// (6) - Pop Over Wrapper
-.pop-over {
+// (7) - Flex Column
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// (8) - Pop Over Wrapper
+
+.wrapper {
     max-width: 1300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.pop-over {
     display: grid;
     grid: repeat(3, auto) / repeat(12, 90px);
     gap: 20px;
@@ -53,7 +83,42 @@ $thin: 300;
 
 header {
     text-align: center;
-    grid-area: 1 / 4 / span 1 / span 5;
+    grid-area: 1 / 4 / span 1 / span 6;
+
+    p:first-child {
+        @include typography($sans-serif, $sm, $thin);
+        @include flexColumn();
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding-top: 50px;
+    }
+
+    p:nth-child(2) {
+        @include typography($serif, $md, $regular);
+        font-style: italic;
+        margin-top: 35px;
+    }
+
+    h1 {
+        @include typography($serif, $xl, $regular);
+        @include flexColumn();
+        text-transform: uppercase;
+        line-height: 60px;
+        margin-top: 35px;
+
+        span:nth-child(2) {
+            color: $primary;
+        }
+    }
+
+    p:nth-child(4) {
+        @include typography($sans-serif, $xs, $regular);
+        margin-top: 65px;
+    }
+
+    svg {
+        margin-top: 50px;
+    }
 }
 
 main {
@@ -61,5 +126,5 @@ main {
 }
 
 footer {
-    grid-area: 3 / 4 / span 1 / span 5;
+    grid-area: 3 / 4 / span 1 / span 6;
 }
